@@ -17,8 +17,24 @@ app.get("/",  (req,res) => {
     res.sendFile(htmlPath)
 })
 
-app.post("/", (req,res) => {
+// app.post("/", (req,res) => {
+//     res.send(`The sum of ${req.body.num1} and ${req.body.num2} is ${String(Number(req.body.num1) + Number(req.body.num2))}`)
+// })
+
+app.post("/adding", (req,res) => {
     res.send(`The sum of ${req.body.num1} and ${req.body.num2} is ${String(Number(req.body.num1) + Number(req.body.num2))}`)
+})
+
+app.post("/subtracting", (req,res) => {
+    res.send(`The result of ${req.body.num1} minus ${req.body.num2} is ${String(Number(req.body.num1) - Number(req.body.num2))}`)
+})
+
+app.post("/multiplying", (req,res) => {
+    res.send(`The result of ${req.body.num1} multiply by ${req.body.num2} is ${String(Number(req.body.num1) * Number(req.body.num2))}`)
+})
+
+app.post("/dividing", (req,res) => {
+    res.send(`The result of ${req.body.num1} divide by ${req.body.num2} is ${String((Number(req.body.num1) / Number(req.body.num2)).toFixed(3))}`)
 })
 
 app.listen(3000,  () => {

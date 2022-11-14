@@ -30,11 +30,11 @@ app.post("/subtracting", (req,res) => {
 })
 
 app.post("/multiplying", (req,res) => {
-    res.send(`The result of ${req.body.num1} multiply by ${req.body.num2} is ${String(Number(req.body.num1) * Number(req.body.num2))}`)
+    res.send(`The result of ${req.body.num1} multiplied by ${req.body.num2} is ${String(Number(req.body.num1) * Number(req.body.num2))}`)
 })
 
 app.post("/dividing", (req,res) => {
-    res.send(`The result of ${req.body.num1} divide by ${req.body.num2} is ${String((Number(req.body.num1) / Number(req.body.num2)).toFixed(3))}`)
+    res.send(`The result of ${req.body.num1} divided by ${req.body.num2} is ${String((Number(req.body.num1) / Number(req.body.num2)).toFixed(3))}`)
 })
 
 app.listen(3000,  () => {

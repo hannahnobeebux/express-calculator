@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
@@ -12,29 +13,48 @@
         <h1> ➖ ✖️ Welcome to the Online Calculator! ➕ ➗</h1>
     </header>
 
-    <div id="whole-calculator">
-        <h3>Enter your numbers</h3>
-        <form id = "calculator-form" action = "/" method="post">
+    <div id="whole-calculator-form">
+        <!-- <form id = "calculator-form" action = "/" method="post"> -->
             <!-- keeping the action as index.html (data is sent back here) and the post method (create) -->
             <!-- afterwards: changing action to home route -->
-            <input type="text" name="num1" placeholder="First number">
-            <input type="text" name="num2" placeholder="Second number">
+            <!-- <input type="text" name="num1" placeholder="First number">
+            <input type="text" name="num2" placeholder="Second number"> -->
 
             <!-- <button type="submit" name="submit" action = "/" method="post" >Calculate!</button> -->
 
-            <button id="add" type="submit" name="submit" formaction="/adding">Add!</button>
+            <!-- <button id="add" type="submit" name="submit" formaction="/adding" >Add!</button>
             <button id="subtract" type="submit" name="submit" formaction="/subtracting">Subtract!</button>
             <button id="multiply" type="submit" name="submit" formaction="/multiplying">Multiply!</button>
-            <button id="divide" type="submit" name="submit" formaction="/dividing">Divide!</button>
+            <button id="divide" type="submit" name="submit" formaction="/dividing">Divide!</button> -->
             
-        </form>
+        <!-- </form> -->
+    </div>
+
+        <div id="whole-calculator">
+
+            <h3>Enter your numbers</h3>
+
+            <input id="n1" type="text" name="num1" placeholder="First number">
+            <input id= "n2" type="text" name="num2" placeholder="Second number">
+
+            <button id="add" name="submit">Add!</button>
+            <button id="subtract" name="submit" >Subtract!</button>
+            <button id="multiply" name="submit">Multiply!</button>
+            <button id="divide" name="submit" >Divide!</button>
+
+            <div id="result">
+            
+            </div>
+            
+        </div>
+
+
 
         <!-- <form id="form2" action="/adding" method="post">
             <button id="add" type="submit" name="submit">Add!</button>
         </form> -->
 
 
-    </div>
 
 
 </body>

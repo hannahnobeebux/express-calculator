@@ -7,6 +7,8 @@ const app = express()
 app.use(express.urlencoded({extended:true}))
 app.use(express.static("public"));
 
+app.use(express.json())
+
 // dirname - a constant that will allow you to get a files path at any given location 
 const htmlPath = path.join(__dirname, "index.html")
 
@@ -22,20 +24,24 @@ app.get("/",  (req,res) => {
 // })
 
 app.post("/adding", (req,res) => {
-    res.send(`The sum of ${req.body.num1} and ${req.body.num2} is ${String(Number(req.body.num1) + Number(req.body.num2))}`)
+    console.log(req.body)
+    res.send({result: `The sum of ${req.body.num1} and ${req.body.num2} is ${String(Number(req.body.num1) + Number(req.body.num2))}`})
+    
 })
 
 app.post("/subtracting", (req,res) => {
-    res.send(`The result of ${req.body.num1} minus ${req.body.num2} is ${String(Number(req.body.num1) - Number(req.body.num2))}`)
+    res.send({result:`The result of ${req.body.num1} minus ${req.body.num2} is ${String(Number(req.body.num1) - Number(req.body.num2))}`})
 })
 
 app.post("/multiplying", (req,res) => {
-    res.send(`The result of ${req.body.num1} multiplied by ${req.body.num2} is ${String(Number(req.body.num1) * Number(req.body.num2))}`)
+    res.send({result:`The result of ${req.body.num1} multiplied by ${req.body.num2} is ${String(Number(req.body.num1) * Number(req.body.num2))}`})
 })
 
 app.post("/dividing", (req,res) => {
-    res.send(`The result of ${req.body.num1} divided by ${req.body.num2} is ${String((Number(req.body.num1) / Number(req.body.num2)).toFixed(3))}`)
+    res.send({result:`The result of ${req.body.num1} divided by ${req.body.num2} is ${String((Number(req.body.num1) / Number(req.body.num2)).toFixed(3))}`})
 })
+
+
 
 app.listen(3000,  () => {
     console.log("Listening on port 3000")
